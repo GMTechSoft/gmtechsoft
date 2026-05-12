@@ -7,7 +7,7 @@ import { projects as PROJECTS_DATA } from '@/data/projects';
 import styles from './ProjectDetail.module.scss';
 import { notFound } from 'next/navigation';
 
-export default function ProjectPage({ params }) {
+export default function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   const project = PROJECTS_DATA.find((p) => p.slug === slug);
 
