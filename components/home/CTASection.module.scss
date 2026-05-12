@@ -1,0 +1,58 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.ctaSection {
+  padding: 80px 0;
+  background-color: $bg-page;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.glowCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-color: $purple;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  @include container;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 48px;
+  color: $text-primary;
+  margin-bottom: 24px;
+  @media (max-width: $mobile) {
+    font-size: 36px;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  color: $text-muted;
+  margin-bottom: 48px;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

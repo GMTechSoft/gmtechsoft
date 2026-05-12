@@ -1,0 +1,99 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-page;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.container {
+  @include container;
+  text-align: center;
+  z-index: 10;
+  max-width: 1000px;
+}
+
+.tagline {
+  @include mono-label;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba($gold, 0.05);
+  border: 1px solid rgba($gold, 0.15);
+  padding: 8px 18px;
+  border-radius: 100px;
+  margin-bottom: 32px;
+  color: $gold;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: $gold;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba($gold, 0.5);
+}
+
+.heading {
+  font-family: var(--font-heading); // Syne
+  font-size: clamp(48px, 9vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.04em; // Tight tracking
+  color: $text-primary;
+  margin-bottom: 32px;
+
+  .accentText {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba($text-primary, 0.3);
+    font-style: italic;
+  }
+}
+
+.subheading {
+  font-family: var(--font-body); // Inter
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: $text-muted;
+  max-width: 640px;
+  margin: 0 auto 56px;
+  line-height: 1.6;
+}
+
+.ctaWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba($bg-border, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($bg-border, 0.15) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  pointer-events: none;
+}
+
+.glowEffect {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(circle at center, rgba($gold, 0.04), transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}

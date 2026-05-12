@@ -1,0 +1,125 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.banner {
+  @include card-style;
+  background-color: $bg-surface;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 80px;
+
+  &:hover {
+    transform: none; // Disable default card hover transform
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  @include mono-label;
+  background-color: rgba($gold, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 0.5px solid $gold;
+  z-index: 10;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageCol {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .index {
+    font-family: var(--font-mono);
+    font-size: 160px;
+    font-weight: 700;
+    color: rgba(white, 0.05);
+  }
+}
+
+.contentCol {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $mobile) {
+    padding: 32px;
+  }
+}
+
+.header {
+  @include flex-between;
+  margin-bottom: 24px;
+  
+  .title {
+    font-size: 32px;
+  }
+}
+
+.description {
+  font-size: 17px;
+  color: $text-muted;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.outcomes {
+  display: flex;
+  gap: 48px;
+  margin-bottom: 48px;
+
+  @media (max-width: $mobile) {
+    gap: 32px;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: $gold;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: $text-muted;
+  text-transform: uppercase;
+}
+
+.cta {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: $gold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 300ms $ease-smooth;
+
+  &:hover {
+    gap: 16px;
+    color: $gold-light;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,53 @@
+@import "@/styles/tokens";
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 40px;
+  border-radius: 4px; 
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: all 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.primary {
+  background-color: #D4AF37;
+  color: #0A0A0F;
+  border: 1px solid #D4AF37;
+
+  &:hover {
+    background-color: transparent;
+    color: #D4AF37;
+    letter-spacing: 0.2em; // Luxury editorial expansion
+    padding-left: 44px;
+    padding-right: 36px;
+  }
+}
+
+.ghost {
+  background-color: transparent;
+  color: #D4AF37;
+  border: 1px solid rgba(#D4AF37, 0.3);
+
+  &:hover {
+    background-color: #D4AF37;
+    color: #0A0A0F;
+    border-color: #D4AF37;
+    letter-spacing: 0.2em; // Luxury editorial expansion
+    padding-left: 44px;
+    padding-right: 36px;
+  }
+}

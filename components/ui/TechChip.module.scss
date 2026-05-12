@@ -1,0 +1,25 @@
+@import "@/styles/tokens";
+
+.chip {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 0.5px solid transparent;
+}
+
+.purple {
+  background: rgba($purple, 0.1);
+  color: $purple-light;
+  border-color: rgba($purple, 0.2);
+}
+
+.gold {
+  background: rgba($gold, 0.1);
+  color: $gold-light;
+  border-color: rgba($gold, 0.2);
+}

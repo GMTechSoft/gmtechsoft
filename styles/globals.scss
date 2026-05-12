@@ -1,0 +1,67 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+@import "@/styles/typography";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: $bg-page;
+  color: $text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background-color: $gold;
+  color: $bg-page;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-page;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $bg-border;
+  border-radius: 4px;
+  
+  &:hover {
+    background: lighten($bg-border, 10%);
+  }
+}
+
+.container {
+  @include container;
+}

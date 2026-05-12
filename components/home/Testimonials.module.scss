@@ -1,0 +1,98 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.testimonials {
+  padding: 120px 0 80px;
+  background-color: $bg-card;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+  max-width: 900px;
+}
+
+.slider {
+  position: relative;
+  height: 400px;
+  @media (max-width: $mobile) {
+    height: 500px;
+  }
+}
+
+.testimonialItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 800ms $ease-smooth;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.quote {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: $text-primary;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  @media (max-width: $mobile) {
+    font-size: 20px;
+  }
+}
+
+.authorInfo {
+  margin-bottom: 24px;
+
+  .name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    font-size: 15px;
+    color: $text-muted;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+
+  .star {
+    color: $gold;
+    font-size: 18px;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: $bg-border;
+  transition: all 300ms $ease-smooth;
+  padding: 0;
+
+  &.active {
+    background-color: $gold;
+    transform: scale(1.5);
+  }
+}

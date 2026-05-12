@@ -1,0 +1,59 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.featuredWork {
+  padding: 120px 0;
+  background-color: #0A0A0F;
+}
+
+.container {
+  @include container;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #8A8A9A;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 48px);
+  color: #EAEAEA;
+  margin-bottom: 60px;
+}
+
+.gridContainer {
+  margin-bottom: 60px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.viewAll {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  color: #FF5A36;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 400ms $ease-smooth;
+
+  &:hover {
+    transform: translateX(8px);
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+}

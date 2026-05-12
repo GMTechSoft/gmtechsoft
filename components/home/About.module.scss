@@ -1,0 +1,112 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.about {
+  padding: 120px 0;
+  background-color: $bg-page;
+  border-top: 0.5px solid $bg-border;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  align-items: flex-start;
+
+  @media (max-width: $tablet) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+.label {
+  @include mono-label;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 32px;
+  @media (max-width: $mobile) {
+    font-size: 32px;
+  }
+}
+
+.text {
+  font-size: 18px;
+  color: $text-muted;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skillsTitle {
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: $text-primary;
+}
+
+.techGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.aiToolsRow {
+  margin-bottom: 48px;
+  padding: 16px 24px;
+  background-color: rgba($gold, 0.03);
+  border-left: 2px solid $gold;
+  border-radius: 0 8px 8px 0;
+}
+
+.aiToolsLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: $gold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.aiToolsValue {
+  font-size: 15px;
+  color: $text-primary;
+  font-weight: 500;
+}
+
+.statsCard {
+  @include card-style;
+  background-color: $bg-surface;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: $gold;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

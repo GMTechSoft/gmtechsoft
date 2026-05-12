@@ -1,0 +1,139 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.card {
+  position: relative;
+  background-color: #111116; // Level 2 dark surface
+  border: 1px solid #1E1E26; // Sharp custom border
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 
+    background-color 600ms $ease-smooth,
+    border-color 600ms $ease-smooth,
+    transform 600ms $ease-smooth;
+  
+  &:hover {
+    background-color: #1A1A22; // Level 3 dark surface
+    border-color: #D4AF37; // Subtle muted gold accent
+    transform: translateY(-4px); // Subtle lift
+
+    .image {
+      transform: scale(1.04);
+    }
+
+    .arrow {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  height: 100%;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.even {
+  .link {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.odd {
+  .link {
+    grid-template-columns: 1fr 1.2fr;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+
+    .imageWrapper {
+      order: 2;
+      @media (max-width: $mobile) {
+        order: 1;
+      }
+    }
+    .content {
+      order: 1;
+      @media (max-width: $mobile) {
+        order: 2;
+      }
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: #0D0D14;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 1.2s $ease-smooth;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(#0A0A0F, 0.4), transparent);
+}
+
+.content {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: $mobile) {
+    padding: 32px;
+  }
+}
+
+.category {
+  @include mono-label;
+  color: #8A8A9A;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 4vw, 32px);
+  color: $text-primary;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #8A8A9A;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.viewProject {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: $gold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow {
+  transition: transform 400ms $ease-smooth;
+}

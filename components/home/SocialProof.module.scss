@@ -1,0 +1,122 @@
+@import "@/styles/tokens";
+@import "@/styles/mixins";
+
+.socialProof {
+  background-color: $bg-card;
+  padding: 60px 0;
+}
+
+.statsContainer {
+  @include container;
+  margin-bottom: 60px;
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+.statItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: $gold;
+  margin-bottom: 8px;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.divider {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 40px;
+  background-color: rgba($gold, 0.2);
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  border-top: 0.5px solid $bg-border;
+  padding-top: 40px;
+  position: relative;
+
+  // Horizontal mask-image gradient fade on both edges
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marqueeContent {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  min-width: 100%;
+  animation: scrollMarquee 40s linear infinite;
+  padding-right: 80px; // Ensure gap between loops
+}
+
+.clientName {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: $text-muted;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: color 300ms ease;
+
+  &:hover {
+    color: $gold;
+  }
+}
+
+@keyframes scrollMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

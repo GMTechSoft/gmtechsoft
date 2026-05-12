@@ -1,0 +1,22 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #FF5A36;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, background-color;
+}
+
+.lens {
+  // Styles for lens state can go here if needed, but keeping simple for now
+}
+
+@media (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+}
